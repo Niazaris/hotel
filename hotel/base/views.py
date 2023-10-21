@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from . import models
-# Create your views here.
+from .models import Room
 
 def home(request):
     return render(request, 'base/home.html')
 
 def room_listings(request):
-    return render(request, 'base/room_listings.html')
+    rooms = Room.objects.all()
+    return render(request, 'base/room_listings.html', {'rooms': rooms})
 
 def contact(request):
     return render(request, 'base/contact.html')

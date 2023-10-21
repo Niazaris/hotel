@@ -1,6 +1,22 @@
 {% extends "main.html" %}
-{% load static %}
+{% load static i18n%}
 <body>
     {% block content %}
+    <h1 id='r'>Hotel Rooms</h1>
+    <div class="container">
+        {% for room in rooms %}
+        <div class="room-box">
+            <img src="{{ room.room_image.url }}" alt="Room Image" class="img-fluid room-image">
+            <div class="room-details">
+                <h3>{{ room.name }}</h3>
+                <p>number of beds: {{ room.beds_number}}</p>
+                <p>Price: {{ room.price }}$</p>
+                <p id='small'>{{ room.notes }}$</p>
+            </div>
+            <button class="room-button">Book Now</button>
+        </div>
+        {% endfor %}
+    </div>
+    </body>
     {% endblock content %}
 </body>

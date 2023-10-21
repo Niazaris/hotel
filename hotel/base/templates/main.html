@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-{% load static%}
-<html lang="en">
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +11,17 @@
 </head>
 </head>
 <body>
-    <header>
+    <header id='alt'>
         <h1>Welcome to the Sol hotel</h1>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'room_listings' %}">Rooms</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a href="{% url 'about_us' %}">About US</a></li>
+                <li><a href="{% url 'home' %}">{% trans "Home"|title %}</a></li>
+                <li><a href="{% url 'room_listings' %}">{% trans "Rooms"|title %}</a></li>
+                <li><a href="{% url 'contact' %}">{% trans "Contact"|title %}</a></li>
+                <li><a href="{% url 'about_us' %}">{% trans "About us"|title %}</a></li>
+                <li class="spacer"></li>
+                <li><a href="{% url "login" %}">{% trans "login"|title %}</a></li>
+                <li><a href="{% url "signup" %}">{% trans "sign up"|title %}</a></li>
             </ul>
          </nav>
     </header>

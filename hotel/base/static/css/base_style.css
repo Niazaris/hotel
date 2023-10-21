@@ -1,8 +1,10 @@
 html {
-    background: url("/static/img/main_background.jpg") no-repeat center center fixed;
-    background-size: cover;
+    font-weight: bold;
+    color: black;
 }
 body {
+    background: url("/static/img/main_background.jpg") no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,13 +12,11 @@ body {
 }
 
 header {
-    color: black;
-    padding: 1em;
     text-align: center;
+    font-size: large;
 }
 
 nav ul {
-
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -29,22 +29,63 @@ nav li {
 }
 
 nav a {
+    color: white;
     text-decoration: none;
-    color: black;
-}
-
-#main {
-    color: black ;
-    text-align: center;
-    padding: 2em;
 }
 
 footer {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     text-align: center;
     padding: 1em;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+#main {
+    text-align: center;
+    padding: 2em;
+}
+
+#r {
+    text-align: center;
+
+}
+
+#alt {
+    padding: 1em;
+    background-color: black;
+    color: white;
+}
+
+.room-box {
+    color: white;
+    border: 1px solid #000000;
+    background-color: #000000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.room-image {
+    width: 300px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.room-details {
+    flex: 1;
+}
+
+#small {
+    font-size: small;
+}
+.room-text {
+    flex-direction: column;
+}
+
+.room-text p {
+    margin: 0;
 }
