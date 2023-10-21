@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sol Hotel{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/base_style.css" %}">
+</head>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Sol hotel</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'room_listings' %}">Rooms</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about_us' %}">About US</a></li>
+            </ul>
+         </nav>
+    </header>
+    {% block content%}
+    {% endblock content%}
+    <footer>
+        <p>&copy; 2023 Hotel Sol. All rights reserved.</p>  
+    </footer>
+</body>
+</html>
