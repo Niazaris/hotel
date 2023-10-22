@@ -1,17 +1,18 @@
 {% extends "main.html" %}
 {% load static i18n%}
+{% block title %}{% trans "About us "|title %}{{ block.super }}{% endblock title %}
 {% block content%}
     <section id='main'>
-        <h2>About Us</h2>
-        <p>Welcome to Our Hotel, where comfort meets luxury. Our hotel is dedicated to providing a memorable experience for each guest through our impeccable service and attention to detail.</p>
-        <p>With a prime location in the heart of the city, Our Hotel is the perfect choice for both business and leisure travelers. Our modern facilities and friendly staff ensure a pleasant stay for all our guests.</p>
+        <h2>{% trans "About Us"|title %}</h2>
+        <p>{% trans "Welcome to Our Hotel, where comfort meets luxury. Our hotel is dedicated to providing a memorable experience for each guest through our impeccable service and attention to detail."|capfirst %}</p>
+        <p>{% trans "With a prime location in the heart of the city, Our Hotel is the perfect choice for both business and leisure travelers. Our modern facilities and friendly staff ensure a pleasant stay for all our guests."|capfirst %}</p>
     </section>
 
     <section id='main'>
-        <h2>Our Mission</h2>
-        <p>At Our Hotel, our mission is to exceed the expectations of our guests by providing exceptional service, a welcoming atmosphere, and a commitment to sustainability. We strive to create a home away from home for everyone who walks through our doors.</p>
+        <h2>{% trans "Our Mission"|title %}</h2>
+        <p>{% trans "At Our Hotel, our mission is to exceed the expectations of our guests by providing exceptional service, a welcoming atmosphere, and a commitment to sustainability. We strive to create a home away from home for everyone who walks through our doors."|capfirst %}</p>
     </section>
     </section>
-    {% endblock content%}
+    {% endblock content%}{% trans ""|title %}
 </body>
 </html>

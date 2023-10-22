@@ -1,24 +1,28 @@
 {% extends "main.html" %}
-{% load static %}
-{% block title %}{{ user }} profile at {{ block.super }}{% endblock title %}
+{% load static i18n %}
+{% block title %}{{ user }}{% trans " profile at "|title %}{{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{{ user }} profile</h1>
+<h1>{{ user }}{% trans " profile"|title %}</h1>
 {% if user.profile.photo %}
     <img class="profile-photo" src="{{ user.profile.photo.url }}">
-{% else %}
-    <img class="profile-photo" src="{% static "user_profile/img/user.jpg" %}">
 {% endif %}
-<p id="big">Full Name: {{ user.first_name }} {{ user.last_name }} </p>
-<p id="big">Email: {{ user.email }}</p>
-<p><a href="{% url "profile_update" %}" class="btn">Update</a></p>
-<h2>Bookings:</h2>
+<p id="big">{% trans "Full Name: "|title %}{{ user.first_name }} {{ user.last_name }} </p>
+<p id="big">{% trans "Email: "|title %}{{ user.email }}</p>
+<p><a href="{% url "profile_update" %}" class="btn">{% trans "Update"|title %}</a></p>
+<h2 id="big">{% trans "Bookings:"|title %}</h2>
 {% if user.booking_set.all %}
     <ul id="bg">
         {% for booking in user.booking_set.all %}
-            <li>{{ booking.room }} - Check-in: {{ booking.check_in_date }} - Check-out: {{ booking.check_out_date }}</li>
+            <li>
+                {{ booking.room }} - {% trans "Check-in:"|title %} {{ booking.check_in_date }} - {% trans "Check-out:"|title %} {{ booking.check_out_date }}
+                <form method="post" action="{% url 'cancel_booking' booking.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">{% trans "Cancel Booking"|title %}</button>
+                </form>
+            </li>
         {% endfor %}
     </ul>
 {% else %}
-    <p id="bg">No bookings yet.</p>
+    <p id="bg">{% trans "No bookings yet."|title %}</p>
 {% endif %}
 {% endblock content %}

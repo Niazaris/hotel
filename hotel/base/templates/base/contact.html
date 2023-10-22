@@ -1,14 +1,14 @@
 {% extends "main.html" %}
 {% load static i18n%}
 {% block content%}
-
+{% block title %}{% trans "Contact at "|title %}{{ block.super }}{% endblock title %}
     <header>
-        <h1>Contact Us</h1>
+        <h1>{% trans "Contact Us"|title %}</h1>
     </header>
 
     <section id="main">
-        <h2>General Inquiries</h2>
-        <p>For general inquiries and information, please contact our main office.</p>
+        <h2>{% trans "General Inquiries"|title %}</h2>
+        <p>{% trans "For general inquiries and information, please contact our main office"|capfirst %}.</p>
         <address>
             Email: <a href="mailto:info@solhotel.com">info@solhotel.com</a><br>
             Phone: (123) 456-7890
@@ -16,8 +16,8 @@
     </section>
 
     <section id="main">
-        <h2>Reservations</h2>
-        <p>To make a reservation or inquire about room availability, please contact our reservations team.</p>
+        <h2>{% trans "Reservations"|title %}</h2>
+        <p>{% trans "To make a reservation or inquire about room availability, please contact our reservations team."|capfirst %}</p>
         <address>
             Email: <a href="mailto:reservations@solhotel.com">reservations@solhotel.com</a><br>
             Phone: (123) 456-7891
@@ -25,17 +25,13 @@
     </section>
 
     <section id="main">
-        <h2>Feedback</h2>
-        <p>We value your feedback. If you have any comments or suggestions, please let us know.</p>
+        <h2>{% trans "Feedback"|title %}</h2>
+        <p>{% trans "We value your feedback. If you have any comments or suggestions, please let us know."|capfirst %}</p>
         <address>
             Email: <a href="mailto:feedback@solhotel.com">feedback@solhotel.com</a><br>
             Phone: (123) 456-7892
         </address>
     </section>
-
-    <footer>
-        <p>&copy; 2023 Our Hotel. All rights reserved.</p>
-    </footer>
 {% endblock content%}
 </body>
 </html>

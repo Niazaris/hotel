@@ -6,13 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Sol Hotel{% endblock title %}</title>
+    <title>{% block title %}Sol {% trans "Hotel"|title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static "css/base_style.css" %}">
 </head>
 </head>
 <body>
     <header id='alt'>
-        <h1>Welcome to the Sol hotel</h1>
+        <h1>{% trans "Welcome to the"|title %} Sol {% trans "hotel"|title %}</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">{% trans "Home"|title %}</a></li>
@@ -21,6 +21,9 @@
                 <li><a href="{% url 'about_us' %}">{% trans "About us"|title %}</a></li>
                 <li class="spacer"></li>
                 {% if user.is_authenticated %}
+                    {% if user.profile.photo %}
+                        <li><img class="profile-photo custom-size" src="{{ user.profile.photo.url }}"></li>
+                    {% endif %}
                     {% if user.is_superuser or user.is_staff %}
                         <li><a href="{% url "admin:index" %}">{% trans "Admin"|title %}</a></li>
                     {% endif %}
@@ -30,13 +33,25 @@
                     <li><a href="{% url "login" %}">{% trans "login"|title %}</a></li>
                     <li><a href="{% url "signup" %}">{% trans "sign up"|title %}</a></li>
                 {% endif %}
+                <li>
+                    <form class="inline-form" action="{% url "set_language" %}" method="post">
+                        {% csrf_token %}
+                        <select name="language" onchange="this.form.submit();">
+                            {% for language in LANGUAGES %}
+                                <option value="{{ language.0 }}"
+                                {% if language.0 == LANGUAGE_CODE %}selected{% endif %}
+                                >{{ language.1 }}</option>
+                            {% endfor %} 
+                        </select>
+                    </form>
+                </li>
             </ul>
          </nav>
     </header>
     {% block content%}
     {% endblock content%}
     <footer>
-        <p>&copy; 2023 Hotel Sol. All rights reserved.</p>  
+        <p>&copy; 2023 {% trans "hotel"|capfirst %} Sol. {% trans "All rights reserved."|capfirst %}</p>  
     </footer>
 </body>
 </html>

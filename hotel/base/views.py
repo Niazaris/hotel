@@ -30,12 +30,18 @@ def book_room(request, room_id):
                 booking.save()
             except ValidationError as e:
                 error_message = str(e)
-                return HttpResponse(f"Error: {error_message}")
+                return HttpResponse(f"Error: {error_message}")         
             return redirect('booking_success') 
     else:
         form = BookingForm()
 
     return render(request, 'base/booking.html', {'form': form, 'room': room})
+
+def cancel_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('profile')
 
 def booking_success(request):
     return render(request, 'base/booking_success.html')

@@ -85,6 +85,11 @@ footer {
     flex: 1;
 }
 
+.custom-size {
+    width: 25px;  
+    height: 25px; 
+}
+
 #small {
     font-size: small;
 }
@@ -98,6 +103,12 @@ footer {
     font-weight: bold;
     font-size: x-large;
 }
+
+#pp {
+    height: auto;
+    width: auto;
+}
+
 .room-text {
     flex-direction: column;
 }

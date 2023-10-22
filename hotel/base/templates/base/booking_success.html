@@ -1,5 +1,6 @@
 {% extends "main.html" %}
 {% load static i18n%}
+{% block title %}{% trans "Booking Successful "|title %}{{ block.super }}{% endblock title %}
 {% block content%}
-<h2>Room - {{ room.name }} booked success </h2>
+<h2>{% trans "Room"|capfirst %} - {{ room.name }} {% trans "booked success" %} </h2>
 {% endblock content%}

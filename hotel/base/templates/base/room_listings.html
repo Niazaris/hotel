@@ -1,28 +1,29 @@
 {% extends "main.html" %}
 {% load static i18n%}
+{% block title %}{% trans "Room listing at "|title %}{{ block.super }}{% endblock title %}
 <body>
     {% block content %}
-    <h1 id='r'>Hotel Rooms</h1>
+    <h1 id='r'>{% trans "Hotel Rooms"|title %}</h1>
     <div class="container">
         {% for room in rooms %}
         <div class="room-box">
             <img src="{{ room.room_image.url }}" alt="Room Image" class="img-fluid room-image">
             <div class="room-details">
                 <h3>{{ room.name }}</h3>
-                <p>number of beds: {{ room.beds_number}}</p>
-                <p>Price: {{ room.price }}$</p>
+                <p>{% trans "number of beds: "|capfirst %}{{ room.beds_number}}</p>
+                <p>{% trans "Price: "|capfirst %} {{ room.price }}$</p>
                 <p id='small'>{{ room.notes }}$</p>
             </div>
             {% if user.is_authenticated and room.is_available == True %}
                 <form method="post" action="{% url 'book_room' room.id %}">
                     {% csrf_token %}
-                    <button type="submit" class="room-button">Book Room</button>
+                    <button type="submit" class="room-button">{% trans "Book Room"|title %}</button>
                 </form>
                 {% elif room.is_available == False %} 
-                    <button type="submit" class="room-button">Booked</button>
+                    <button type="submit" class="room-button">{% trans "Booked"|capfirst %}</button>
             {% else %}
             <a href="{% url 'login' %}">
-                <button class="room-button">Book Room</button>
+                <button class="room-button">{% trans "Book Room"|title %}</button>
             </a>
             {% endif %}
         </div>

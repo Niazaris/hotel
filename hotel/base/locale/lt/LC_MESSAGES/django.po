@@ -1,0 +1,452 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: .\base\templates\base\about_us.html:16
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-23 01:35+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: .\base\models.py:25
+msgid "room"
+msgstr "kambarys"
+
+#: .\base\models.py:26
+msgid "rooms"
+msgstr "kambariai"
+
+#: .\base\models.py:42
+msgid "booking"
+msgstr "rezervacija"
+
+#: .\base\models.py:43
+msgid "bookings"
+msgstr "rezervacijos"
+
+#: .\base\models.py:49
+msgid "Check in date cannot be earlier than today."
+msgstr "Įsiregistravimo data negali būti anksčiau nei šiandien."
+
+#: .\base\models.py:51
+msgid "Check out date cannot be earlier than Check in."
+msgstr "Išsiregistravimo data negali būti anksčiau nei įsiregistravimo data."
+
+#: .\base\models.py:53
+#, fuzzy
+#| msgid "Check in date cannot be later than Check out."
+msgid "Check in  date cannot be later than Check out."
+msgstr "Įsiregistravimo data negali būti vėliau nei išsiregistravimo data."
+
+#: .\base\models.py:55
+#, fuzzy
+#| msgid "Check in and Check out cannot be the same."
+msgid "Check in  and Check out can not be the same."
+msgstr "Įsiregistravimo ir išsiregistravimo datos negali būti vienodos."
+
+#: .\base\templates\base\about_us.html:3
+msgid "About us "
+msgstr "Apie mus "
+
+#: .\base\templates\base\about_us.html:6
+msgid "About Us"
+msgstr "Apie Mus"
+
+#: .\base\templates\base\about_us.html:7
+msgid ""
+"Welcome to Our Hotel, where comfort meets luxury. Our hotel is dedicated to "
+"providing a memorable experience for each guest through our impeccable "
+"service and attention to detail."
+msgstr ""
+"Sveiki atvykę į mūsų viešbutį, kur patogumas susitinka su prabanga. Mūsų "
+"viešbutis skiria ypatingą dėmesį kiekvienam svečiui, teikdamas neeilinį "
+"patyrimą per mūsų puikų aptarnavimą ir dėmesį smulkmenoms."
+
+#: .\base\templates\base\about_us.html:8
+msgid ""
+"With a prime location in the heart of the city, Our Hotel is the perfect "
+"choice for both business and leisure travelers. Our modern facilities and "
+"friendly staff ensure a pleasant stay for all our guests."
+msgstr ""
+"Turėdami puikų viešbučio padėtį miesto centre, mūsų viešbutis yra puikus "
+"pasirinkimas tiek verslo, tiek poilsiui keliaujantiems. Mūsų modernios "
+"patalpos ir draugiškas personalas užtikrina malonų viešnagę visiems mūsų "
+"svečiams."
+
+#: .\base\templates\base\about_us.html:12
+msgid "Our Mission"
+msgstr "Mūsų Misija"
+
+#: .\base\templates\base\about_us.html:13
+msgid ""
+"At Our Hotel, our mission is to exceed the expectations of our guests by "
+"providing exceptional service, a welcoming atmosphere, and a commitment to "
+"sustainability. We strive to create a home away from home for everyone who "
+"walks through our doors."
+msgstr ""
+"Mūsų viešbucio misija - viršyti mūsų svečių lūkesčius teikiant išskirtinį "
+"aptarnavimą, sveikinančią atmosferą ir įsipareigojimą darniam vystymuisi. "
+"Stengiamės kurti namus toli nuo namų kiekvienam, kas pas mus užeina."
+
+#: .\base\templates\base\booking.html:3
+#, fuzzy
+#| msgid "Bookings:"
+msgid "Booking at "
+msgstr "Rezervacijos:"
+
+#: .\base\templates\base\booking.html:5
+msgid "Book"
+msgstr "Rezervuoti"
+
+#: .\base\templates\base\booking.html:9
+msgid "Submit Booking"
+msgstr "Pateikti užsakymą"
+
+#: .\base\templates\base\booking_success.html:3
+#, fuzzy
+#| msgid "booked success"
+msgid "Booking Successful "
+msgstr "sėkmingai užrezervuota"
+
+#: .\base\templates\base\booking_success.html:5
+msgid "Room"
+msgstr "Kambarys"
+
+#: .\base\templates\base\booking_success.html:5
+msgid "booked success"
+msgstr "sėkmingai užrezervuota"
+
+#: .\base\templates\base\contact.html:4
+msgid "Contact at "
+msgstr "Kontaktai "
+
+#: .\base\templates\base\contact.html:6
+msgid "Contact Us"
+msgstr "Susisiekite su mumis"
+
+#: .\base\templates\base\contact.html:10
+msgid "General Inquiries"
+msgstr "Bendros užklausos"
+
+#: .\base\templates\base\contact.html:11
+msgid "For general inquiries and information, please contact our main office"
+msgstr ""
+"Dėl bendrų užklausų ir informacijos, prašome susisiekti su mūsų pagrindiniu "
+"biuru"
+
+#: .\base\templates\base\contact.html:19
+msgid "Reservations"
+msgstr "Rezervacijos"
+
+#: .\base\templates\base\contact.html:20
+msgid ""
+"To make a reservation or inquire about room availability, please contact our "
+"reservations team."
+msgstr ""
+"Norėdami užsakyti ar sužinoti apie kambarių prieinamumą, prašome susisiekti "
+"su mūsų rezervacijų komanda."
+
+#: .\base\templates\base\contact.html:28
+msgid "Feedback"
+msgstr "Atsiliepimai"
+
+#: .\base\templates\base\contact.html:29
+msgid ""
+"We value your feedback. If you have any comments or suggestions, please let "
+"us know."
+msgstr ""
+"Vertiname jūsų atsiliepimus. Jei turite kokius nors komentarus ar "
+"pasiūlymus, prašome mums pranešti."
+
+#: .\base\templates\base\home.html:5
+msgid "Your Comfortable Stay Awaits"
+msgstr "Jūsų patogus viešnagė laukia"
+
+#: .\base\templates\base\home.html:6
+msgid "Discover luxury and comfort at our hotel. Book now for the best rates!"
+msgstr ""
+"Atraskite prabangą ir patogumą mūsų viešbutyje. Užsakykite dabar už "
+"geriausias kainas!"
+
+#: .\base\templates\base\room_listings.html:3
+msgid "Room listing at "
+msgstr "Kambarių sąrašas "
+
+#: .\base\templates\base\room_listings.html:6
+msgid "Hotel Rooms"
+msgstr "Viešbučio kambariai"
+
+#: .\base\templates\base\room_listings.html:13
+msgid "number of beds: "
+msgstr "lovų skaičius: "
+
+#: .\base\templates\base\room_listings.html:14
+msgid "Price: "
+msgstr "Kaina: "
+
+#: .\base\templates\base\room_listings.html:20
+#: .\base\templates\base\room_listings.html:26
+msgid "Book Room"
+msgstr "Rezervuoti kambarį"
+
+#: .\base\templates\base\room_listings.html:23
+msgid "Booked"
+msgstr "Užrezervuota"
+
+#: .\base\templates\main.html:9
+msgid "Hotel"
+msgstr "Viešbutis"
+
+#: .\base\templates\main.html:15
+msgid "Welcome to the"
+msgstr "Sveiki atvykę į"
+
+#: .\base\templates\main.html:15 .\base\templates\main.html:54
+msgid "hotel"
+msgstr "viešbutį"
+
+#: .\base\templates\main.html:18
+msgid "Home"
+msgstr "Pradžia"
+
+#: .\base\templates\main.html:19
+msgid "Rooms"
+msgstr "Kambariai"
+
+#: .\base\templates\main.html:20
+msgid "Contact"
+msgstr "Kontaktai"
+
+#: .\base\templates\main.html:21
+msgid "About us"
+msgstr "Apie mus"
+
+#: .\base\templates\main.html:28
+msgid "Admin"
+msgstr "Administratorius"
+
+#: .\base\templates\main.html:30
+msgid "logout"
+msgstr "atsijungti"
+
+#: .\base\templates\main.html:33
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+msgid "login"
+msgstr "prisijungti"
+
+#: .\base\templates\main.html:34
+#: .\user_profile\templates\registration\login.html:12
+msgid "sign up"
+msgstr "užsiregistruoti"
+
+#: .\base\templates\main.html:54
+msgid "All rights reserved."
+msgstr "Visos teisės saugomos."
+
+#: .\user_profile\apps.py:8
+msgid "user profile"
+msgstr "vartotojo profilis"
+
+#: .\user_profile\models.py:13
+msgid "user"
+msgstr "vartotojas"
+
+#: .\user_profile\models.py:18
+msgid "photo"
+msgstr "nuotrauka"
+
+#: .\user_profile\models.py:21
+msgid "profile"
+msgstr "profilis"
+
+#: .\user_profile\models.py:22
+msgid "profiles"
+msgstr "profiliai"
+
+#: .\user_profile\templates\registration\logged_out.html:3
+msgid "Logged out from "
+msgstr "Atsijungta iš "
+
+#: .\user_profile\templates\registration\logged_out.html:5
+msgid "Bye bye"
+msgstr "Viso gero"
+
+#: .\user_profile\templates\registration\logged_out.html:6
+msgid "You are now logged out from Sol hotel. "
+msgstr "Dabar jūs atsijungęs (-usi) iš Sol viešbučio."
+
+#: .\user_profile\templates\registration\logged_out.html:7
+msgid "You are welcome to "
+msgstr "Laukiame sugrįžtant į "
+
+#: .\user_profile\templates\registration\logged_out.html:7
+msgid "log in"
+msgstr "prisijungimą"
+
+#: .\user_profile\templates\registration\logged_out.html:7
+msgid "back any time."
+msgstr "bet kuriuo metu."
+
+#: .\user_profile\templates\registration\login.html:3
+msgid "Log into "
+msgstr "Prisijunkite prie "
+
+#: .\user_profile\templates\registration\login.html:5
+#: .\user_profile\templates\registration\login.html:9
+msgid "Log in"
+msgstr "Prisijungti"
+
+#: .\user_profile\templates\registration\login.html:11
+#, fuzzy
+#| msgid "Password:"
+msgid "Forgot Password?"
+msgstr "Slaptažodis:"
+
+#: .\user_profile\templates\registration\login.html:12
+msgid "Don't have an account? "
+msgstr "Neturite paskyros? "
+
+#: .\user_profile\templates\registration\password_reset_complete.html:3
+#: .\user_profile\templates\registration\password_reset_confirm.html:3
+#: .\user_profile\templates\registration\password_reset_done.html:3
+#: .\user_profile\templates\registration\password_reset_form.html:3
+msgid "Password Reset at "
+msgstr "Slaptažodžio nustatymas "
+
+#: .\user_profile\templates\registration\password_reset_complete.html:5
+msgid "Password Reset Done"
+msgstr "Slaptažodžio nustatymas baigtas"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+msgid "You can "
+msgstr "Galite "
+
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+msgid "now with your new password."
+msgstr "dabar su savo nauju slaptažodžiu."
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:5
+msgid "Enter New Password"
+msgstr "Įveskite naują slaptažodį"
+
+#: .\user_profile\templates\registration\password_reset_confirm.html:9
+#: .\user_profile\templates\registration\password_reset_form.html:9
+#: .\user_profile\templates\user_profile\signup.html:24
+msgid "Confirm"
+msgstr "Patvirtinti"
+
+#: .\user_profile\templates\registration\password_reset_done.html:5
+msgid "Check your email"
+msgstr "Patikrinkite savo el. paštą"
+
+#: .\user_profile\templates\registration\password_reset_done.html:6
+msgid "We have sent you an email with further instructions."
+msgstr "Mes jums išsiuntėme el. laišką su tolesniais nurodymais."
+
+#: .\user_profile\templates\registration\password_reset_form.html:5
+msgid "Reset Your Password"
+msgstr "Atstatykite savo slaptažodį"
+
+#: .\user_profile\templates\user_profile\profile.html:3
+msgid " profile at "
+msgstr " profilis "
+
+#: .\user_profile\templates\user_profile\profile.html:5
+msgid " profile"
+msgstr " profilis"
+
+#: .\user_profile\templates\user_profile\profile.html:9
+msgid "Full Name: "
+msgstr "Vardas, Pavardė: "
+
+#: .\user_profile\templates\user_profile\profile.html:10
+msgid "Email: "
+msgstr "El. paštas: "
+
+#: .\user_profile\templates\user_profile\profile.html:11
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: .\user_profile\templates\user_profile\profile.html:12
+msgid "Bookings:"
+msgstr "Rezervacijos:"
+
+#: .\user_profile\templates\user_profile\profile.html:17
+msgid "Check-in:"
+msgstr "Įsiregistravimas:"
+
+#: .\user_profile\templates\user_profile\profile.html:17
+msgid "Check-out:"
+msgstr "Išsiregistravimas:"
+
+#: .\user_profile\templates\user_profile\profile.html:20
+msgid "Cancel Booking"
+msgstr "Atšaukti rezervaciją"
+
+#: .\user_profile\templates\user_profile\profile.html:26
+msgid "No bookings yet."
+msgstr "Kol kas nėra rezervacijų."
+
+#: .\user_profile\templates\user_profile\signup.html:3
+msgid "Sign up to "
+msgstr "Užsiregistruokite "
+
+#: .\user_profile\templates\user_profile\signup.html:5
+msgid "Sign up"
+msgstr "Užsiregistruoti"
+
+#: .\user_profile\templates\user_profile\signup.html:9
+msgid "Username:"
+msgstr "Vartotojo vardas:"
+
+#: .\user_profile\templates\user_profile\signup.html:13
+msgid "E-mail:"
+msgstr "El. paštas:"
+
+#: .\user_profile\templates\user_profile\signup.html:17
+msgid "Password:"
+msgstr "Slaptažodis:"
+
+#: .\user_profile\templates\user_profile\signup.html:21
+msgid "Repeat Password:"
+msgstr "Pakartokite slaptažodį:"
+
+#: .\user_profile\templates\user_profile\signup.html:26
+msgid "If you are have an account, you can "
+msgstr "Jei jau turite paskyrą, galite "
+
+#: .\user_profile\templates\user_profile\signup.html:27
+msgid "Log in "
+msgstr "Prisijungti "
+
+#: .\user_profile\templates\user_profile\signup.html:27
+msgid " instead."
+msgstr "užsiregistruoti anksčiau."
+
+#: .\user_profile\templates\user_profile\update.html:3
+msgid "Update Your Profile at "
+msgstr "Atnaujinkite savo profilį "
+
+#: .\user_profile\templates\user_profile\update.html:5
+msgid "Update Your Profile"
+msgstr "Atnaujinti savo profilį"
+
+#: .\user_profile\templates\user_profile\update.html:10
+msgid "Save Changes"
+msgstr "Išsaugoti pakeitimus"
+
+#~ msgid " "
+#~ msgstr " "

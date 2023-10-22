@@ -1,11 +1,12 @@
 {% extends "main.html" %}
-{% block title %}Update Your Profile at {{ block.super }}{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "Update Your Profile at "|title %}{{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Update Your Profile</h1>
+<h1>{% trans "Update Your Profile"|title %}</h1>
 <form method="post" action="{{ request.path }}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ user_form.as_p }}
     {{ profile_form.as_p }}
-    <p><button type="submit">Save Changes</button></p>
+    <p><button type="submit">{% trans "Save Changes"|title %}</button></p>
 </form>
 {% endblock content %}

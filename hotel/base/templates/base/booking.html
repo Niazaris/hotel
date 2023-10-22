@@ -1,10 +1,11 @@
 {% extends "main.html" %}
 {% load static i18n%}
+{% block title %}{% trans "Booking at "|title %}{{ block.super }}{% endblock title %}
 {% block content%}
-<h2>Book - {{ room.name }}</h2>
+<h2>{% trans "Book"|title %} - {{ room.name }}</h2>
 <form method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit Booking</button>
+    <button type="submit">{% trans "Submit Booking"|title %}</button>
 </form>
 {% endblock content%}
