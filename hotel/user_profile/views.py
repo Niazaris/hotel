@@ -7,6 +7,7 @@ from . import models, forms
 
 User = get_user_model()
 
+
 @csrf_protect
 def profile_update(request: HttpRequest):
     if request.method == "POST":
@@ -28,6 +29,7 @@ def profile_update(request: HttpRequest):
 
 def profile(request: HttpRequest):
     return render(request, 'user_profile/profile.html')
+
 
 @csrf_protect
 def signup(request: HttpRequest):

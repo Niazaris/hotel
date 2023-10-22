@@ -20,8 +20,16 @@
                 <li><a href="{% url 'contact' %}">{% trans "Contact"|title %}</a></li>
                 <li><a href="{% url 'about_us' %}">{% trans "About us"|title %}</a></li>
                 <li class="spacer"></li>
-                <li><a href="{% url "login" %}">{% trans "login"|title %}</a></li>
-                <li><a href="{% url "signup" %}">{% trans "sign up"|title %}</a></li>
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser or user.is_staff %}
+                        <li><a href="{% url "admin:index" %}">{% trans "Admin"|title %}</a></li>
+                    {% endif %}
+                    <li><a href="{% url "logout" %}">{% trans "logout"|title %}</a></li>
+                    <li><a href="{% url "profile" %}">{{ user.username }}</a></li>
+                {% else %}
+                    <li><a href="{% url "login" %}">{% trans "login"|title %}</a></li>
+                    <li><a href="{% url "signup" %}">{% trans "sign up"|title %}</a></li>
+                {% endif %}
             </ul>
          </nav>
     </header>

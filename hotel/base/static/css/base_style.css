@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    margin-bottom: 100px;
 }
 
 header {
@@ -23,7 +24,6 @@ nav ul {
     display: flex; 
     justify-content: center; 
 }
-
 nav li {
     margin: 0 15px;
 }
@@ -41,6 +41,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    height:60px;
+    
 }
 
 #main {
@@ -63,12 +65,16 @@ footer {
     color: white;
     border: 1px solid #000000;
     background-color: #000000;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     border-radius: 5px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; 
+    position: relative;
+    margin-bottom: 10px;
+    justify-content: space-between;
 }
+
 .room-image {
     width: 300px;
     height: 100%;
@@ -82,10 +88,37 @@ footer {
 #small {
     font-size: small;
 }
+
+#bg {
+    color: white;
+    background-color: black;
+}
+
+#big {
+    font-weight: bold;
+    font-size: x-large;
+}
 .room-text {
     flex-direction: column;
 }
 
-.room-text p {
-    margin: 0;
+.room-button {
+    margin-left: auto;
+    padding: 10px;
+}
+
+.box-error {
+    background-color: #2e2d2d;
+}
+.box-success {
+    background-color: #2e2d2d;
+}
+.box-warning {
+    background-color: #2e2d2d;
+}
+.box-info {
+    background-color: #2e2d2d;
+}
+.box-debug {
+    background-color: #2e2d2d;
 }

@@ -13,7 +13,18 @@
                 <p>Price: {{ room.price }}$</p>
                 <p id='small'>{{ room.notes }}$</p>
             </div>
-            <button class="room-button">Book Now</button>
+            {% if user.is_authenticated and room.is_available == True %}
+                <form method="post" action="{% url 'book_room' room.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="room-button">Book Room</button>
+                </form>
+                {% elif room.is_available == False %} 
+                    <button type="submit" class="room-button">Booked</button>
+            {% else %}
+            <a href="{% url 'login' %}">
+                <button class="room-button">Book Room</button>
+            </a>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

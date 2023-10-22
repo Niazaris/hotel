@@ -4,27 +4,21 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
-import uuid
 
 User = get_user_model()
-
-ROOM_STATUS = (
-    (0, _("available")),
-    (1, _("booked")),
-    (2, _("unavailable")),
-)
 
 def validate_room_image(value):
     if not value:
         raise ValidationError("Image is required for a room.")
 
 class Room(models.Model):
-    name = models.CharField(max_length=100, db_index=True)
+    name = models.CharField(max_length=50, db_index=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     beds_number = models.PositiveSmallIntegerField()
     room_number = models.PositiveIntegerField(unique=True)
+    is_available = models.BooleanField(default=True)
     room_image = models.ImageField(upload_to='room_images/', null=True, blank=True, validators=[validate_room_image])
-    notes  = models.TextField(null=True, blank=True)
+    notes  = models.TextField(max_length=500, null=True, blank=True)
 
 
     class Meta:
@@ -37,55 +31,40 @@ class Room(models.Model):
     def get_absolute_url(self):
         return reverse("_detail", kwargs={"pk": self.pk})
 
-class Reservation(models.Model):
-    name = models.CharField(max_length=100, db_index=True)
-    email = models.EmailField(max_length=100)
-    booked_room_number = models.ForeignKey(
-        Room, 
-        verbose_name=_("reservation"),
-        on_delete=models.CASCADE,
-        related_name="reservetion",
-    )
-    start_date = models.DateField(default=None)
-    end_date = models.DateField(default=None)
-    notes  = models.TextField(null=True, blank=True)
+class Booking(models.Model):
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    check_in_date = models.DateField()
+    check_out_date = models.DateField()
 
 
     class Meta:
-        verbose_name = _("reservation")
-        verbose_name_plural = _("reservations")
+        verbose_name = _("booking")
+        verbose_name_plural = _("bookings")
+
+
+    def save(self, *args, **kwargs):
+        today = date.today()
+        if self.check_in_date < today:
+            raise ValidationError(_("Check in date cannot be earlier than today."))
+        elif self.check_out_date < self.check_in_date:
+            raise ValidationError(_("Check out date cannot be earlier than Check in."))
+        elif self.check_in_date  > self.check_out_date:
+            raise ValidationError(_("Check in  date cannot be later than Check out."))
+        elif self.check_in_date  == self.check_out_date:
+             raise ValidationError(_("Check in  and Check out can not be the same."))
+        else:
+            self.room.is_available = False
+            self.room.save()
+            super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        self.room.is_available = True
+        self.room.save()
+        super().delete(*args, **kwargs)
 
     def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("_detail", kwargs={"pk": self.pk})
-
-class RoomInstance(models.Model):
-    unique_id = models.UUIDField(
-        _("unique ID"), 
-        db_index=True, 
-        unique=True,
-        default=uuid.uuid4,
-    )
-
-    room = models.ForeignKey(
-        Room, 
-        verbose_name=_("room"),
-        related_name="instances",
-        on_delete=models.CASCADE,
-    )
-
-    status = models.PositiveSmallIntegerField(
-        _("status"), choices=ROOM_STATUS, default=0
-    )
-
-    class Meta:
-        verbose_name = _("Room instance")
-        verbose_name_plural = _("Room instances")
-
-    def __str__(self):
-        return f"UUID:{self.unique_id}, {self.room}"
+        return f"Booking {self.room} by {self.user.username}"
 
     def get_absolute_url(self):
         return reverse("_detail", kwargs={"pk": self.pk})

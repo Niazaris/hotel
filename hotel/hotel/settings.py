@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'base',
-    'user',
+    'user_profile',
     'tinymce',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,7 +112,7 @@ LANGUAGES = (
     ('lt', 'lietuvių'),
 )
 
-TIME_ZONE = 'UTC+2'
+TIME_ZONE = 'Europe/Vilnius'
 
 USE_I18N = True
 
@@ -134,12 +134,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-#EMAIL_HOST = local_settings.EMAIL_HOST
-#EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = local_settings.EMAIL_HOST_USER
-#EMAIL_HOST_PASSWORD = local_settings.EMAIL_HOST_PASSWORD
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = local_settings.EMAIL_HOST
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = local_settings.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = local_settings.EMAIL_HOST_PASSWORD
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 300,

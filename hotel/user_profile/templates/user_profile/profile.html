@@ -8,7 +8,17 @@
 {% else %}
     <img class="profile-photo" src="{% static "user_profile/img/user.jpg" %}">
 {% endif %}
-<p>Full Name: {{ user.first_name }} {{ user.last_name }} </p>
-<p>Email: {{ user.email }}</p>
+<p id="big">Full Name: {{ user.first_name }} {{ user.last_name }} </p>
+<p id="big">Email: {{ user.email }}</p>
 <p><a href="{% url "profile_update" %}" class="btn">Update</a></p>
+<h2>Bookings:</h2>
+{% if user.booking_set.all %}
+    <ul id="bg">
+        {% for booking in user.booking_set.all %}
+            <li>{{ booking.room }} - Check-in: {{ booking.check_in_date }} - Check-out: {{ booking.check_out_date }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p id="bg">No bookings yet.</p>
+{% endif %}
 {% endblock content %}
