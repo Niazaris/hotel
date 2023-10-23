@@ -114,8 +114,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 LANGUAGES = (
-    (LANGUAGE_CODE, 'US English'),
-    ('lt', 'lietuvių'),
+    (LANGUAGE_CODE, 'EN'),
+    ('lt', 'LT'),
 )
 
 TIME_ZONE = 'Europe/Vilnius'
